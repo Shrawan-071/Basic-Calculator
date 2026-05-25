@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Calculator</title>
+  </head>
+  <body>
+    <div class="all">
+      <div class="calculator">
+        <div id="input">Shrawan</div>
+        <div id="output">Calculator</div>
+        <button type="button" onclick="value0()">0</button>
+        <button onclick="value1()" type="button">1</button>
+        <button onclick="value2()" type="button">2</button>
+        <button onclick="value3()" type="button">3</button>
+        <br />
+        <button onclick="value4()" type="button">4</button>
+        <button onclick="value5()" type="button">5</button>
+        <button onclick="value6()" type="button">6</button>
+        <button onclick="value7()" type="button">7</button>
+        <br />
+        <button onclick="value8()" type="button">8</button>
+        <button onclick="value9()" type="button">9</button>
+        <button onclick="add()" type="button">+</button>
+        <button onclick="sub()" type="button">-</button>
+        <br />
+        <button onclick="mul()" type="button">*</button>
+        <button onclick="div()" type="button">/</button>
+        <button onclick="equal()" type="button">=</button>
+        <button id="Ac" type="button" onclick="refresh()">⟳</button>
+        <br />
+        <button onclick="openbracket()" type="button">(</button>
+        <button onclick="closebracket()" type="button">)</button>
+        <button
+          onclick="backspace()"
+          onclick="event.preventDefault(); backspace();"
+          id="backspace"
+        >
+          🔙
+        </button>
+        <button onclick="refresh()" id="emoji">😇</button>
+      </div>
+    </div>
+
+    <script>
+      var a;
+      var b = "";
+      let sliced;
+      function value0() {
+        a = "0";
+        b = b + a;
+        document.getElementById("output").innerHTML = b;
+      }
+      function value1() {
+        a = "1";
+        b = b + a;
+        document.getElementById("output").innerHTML = b;
+      }
+      function value2() {
+        a = "2";
+        b = b + a;
+        document.getElementById("output").innerHTML = b;
+      }
+      function value3() {
+        a = "3";
+        b = b + a;
+        document.getElementById("output").innerHTML = b;
+      }
+      function value4() {
+        a = "4";
+        b = b + a;
+        document.getElementById("output").innerHTML = b;
+      }
+      function value5() {
+        a = "5";
+        b = b + a;
+        document.getElementById("output").innerHTML = b;
+      }
+      function value6() {
+        a = "6";
+        b = b + a;
+        document.getElementById("output").innerHTML = b;
+      }
+      function value8() {
+        a = "8";
+        b = b + a;
+        document.getElementById("output").innerHTML = b;
+      }
+      function value9() {
+        a = "9";
+        b = b + a;
+        document.getElementById("output").innerHTML = b;
+      }
+      function mul() {
+        a = "*";
+        b = b + a;
+        document.getElementById("output").innerHTML = b;
+      }
+      function sub() {
+        a = "-";
+        b = b + a;
+        document.getElementById("output").innerHTML = b;
+      }
+      function div() {
+        a = "/";
+        b = b + a;
+        document.getElementById("output").innerHTML = b;
+      }
+      function value7() {
+        a = "7";
+        b = b + a;
+        document.getElementById("output").innerHTML = b;
+      }
+      function add() {
+        a = "+";
+        b = b + a;
+        document.getElementById("output").innerHTML = b;
+      }
+      function openbracket() {
+        a = "(";
+        b = b + a;
+        document.getElementById("output").innerHTML = b;
+      }
+      function closebracket() {
+        a = ")";
+        b = b + a;
+        document.getElementById("output").innerHTML = b;
+      }
+      function backspace() {
+        sliced = String(b).slice(0, -1);
+        document.getElementById("output").innerHTML = sliced;
+        b = sliced;
+      }
+      function equal() {
+        // for( var i=0;i<b.length;i++){
+        //     if(b[i]>=0||b[i]<=0){
+        //     v1=v1+b[i];
+        //     }
+        //     else{
+        //     op=b[i];
+        //     for(var j=i+1;j<b.length;j++){
+        //         v2=v2+b[j];
+        //     }
+        //     break;
+        //     }
+        // }
+        // var value1=Number(v1);
+        // var value2=Number(v2);
+        // switch(op) {
+        //   case "+": result = value1 + value2; break;
+        //   case "-": result = value1 - value2; break;
+        //   case "*": result = value1 * value2; break;
+        //   case "/": result = value1 / value2; break;
+        // }
+        var result = eval(b); //this will evaluate the value of b
+        document.getElementById("input").innerHTML = b + "=";
+        document.getElementById("output").innerHTML = result;
+        b = String(result);
+      }
+      function refresh() {
+        window.location.reload();
+      }
+    </script>
+  </body>
+</html>
